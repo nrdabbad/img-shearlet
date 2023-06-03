@@ -1,0 +1,64 @@
+run:
+  go: '1.20'
+  # timeout defines the linter timeout. Default: 1m
+  timeout: 5m
+
+linters:
+  enable-all: true
+  disable:
+    - dupl
+    - exhaustivestruct
+    - funlen
+    - gochecknoglobals
+    - goconst
+    - goerr113
+    - gomnd
+    - interfacer
+    - lll
+    - maligned
+    - nlreturn
+    - wrapcheck
+    - wsl
+    - varnamelen
+    - scopelint
+    - golint
+    - ireturn
+    - bodyclose
+    - contextcheck
+    - gosimple
+    - nilerr
+    - noctx
+    - rowserrcheck
+    - sqlclosecheck
+    - staticcheck
+    - structcheck
+    - stylecheck
+    - unparam
+    - unused
+    - wastedassign
+    - exhaustruct
+    - gocognit
+    - cyclop
+    - gocyclo
+    - exhaustive
+    # Deprecated
+    - deadcode
+    - ifshort
+    - varcheck
+    - nosnakecase
+
+issues:
+  exclude-rules:
+    # Exclude some linters from running on tests files.
+    - path: _test\.go
+      linters:
+        - maintidx
+        - maligned
+        - testpackage
+
+linters-settings:
+  tagliatelle:
+    case:
+      rules:
+        json: camel
+        yaml: snake
