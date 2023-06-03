@@ -6,6 +6,7 @@ run:
 linters:
   enable-all: true
   disable:
+    - forbidigo
     - dupl
     - exhaustivestruct
     - funlen
